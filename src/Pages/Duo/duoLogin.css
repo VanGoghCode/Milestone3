@@ -1,0 +1,108 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.duo-login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    text-transform: uppercase;
+    color: #3b8a3d;
+}
+
+.auth-heading {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.duo-auth-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 5px 40px 40px 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+}
+.logo {
+    max-height: 9vh;
+}
+
+.logo img {
+    width: 11vh;
+}
+
+.auth-content h2 {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.auth-content p {
+    color: #888;
+    font-size: 14px;
+    margin: 5px 0 20px 0;
+}
+
+.auth-button {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin: 15px 0;
+    background-color: #4caf50;
+    color: #ffffff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.auth-button:hover {
+    background-color: #388e3c;
+    /* Darker green for hover */
+}
+
+.help-link,
+.settings-link {
+    display: block;
+    color: #888;
+    font-size: 12px;
+    margin-top: 15px;
+    text-decoration: none;
+}
+
+.help-link:hover,
+.settings-link:hover {
+    text-decoration: underline;
+}
+
+.additional-options {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #888;
+}
+
+.help-text {
+    text-decoration: none;
+    color: #888;
+}
+
+.remember-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 14px;
+}
+
+.secured-text {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #000;
+}
