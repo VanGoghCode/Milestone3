@@ -1,8 +1,24 @@
+.header-main-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-container {
+    height: 10vh;
+    width: 10vh;
+}
+
+.logo-container img {
+    padding: 2.5vh;
+    height: 6vh;
+    width: 6vh;
+}
+
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    max-width: 98vw;
+    width: 91.5vw;
     background-color: #1a73e8;
     border-radius: 5vh;
     margin: 1vh 1vw;
@@ -31,4 +47,10 @@
 
 .nav-links a:hover {
     text-decoration: underline;
+}
+
+.nav-links .active-link {
+    color: #000;
+    /* Black color for the active link */
+    font-weight: bold;
 }
