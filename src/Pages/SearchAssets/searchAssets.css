@@ -31,20 +31,33 @@
     text-decoration: underline;
 }
 
-.search-container {
+.search-container-top {
+    /* max-width: 50vw; */
+    margin: 40px auto;
+    padding: 20px 50px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    width: 89vw;
+}
+.search-container-bottom {
     max-width: 50vw;
     margin: 40px auto;
     padding: 20px 50px;
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    min-width: 30vw;
+    width: 89vw;
 }
 
 .search-container h2 {
     color: #1a73e8;
     font-size: 26px;
     margin-bottom: 20px;
+}
+.search-form {
+    display: flex;
+    justify-content: space-between;
 }
 
 .search-form label {
@@ -57,6 +70,7 @@
 .search-form input {
     width: -webkit-fill-available;
     padding: 10px;
+    max-width: 20vw;
     margin-bottom: 15px;
     border: 1px solid #ddd;
     border-radius: 6px;
@@ -69,8 +83,14 @@
     box-shadow: 0 0 8px rgba(26, 115, 232, 0.2);
 }
 
-.search-form button {
+.search-container-top .button {
     width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.search-container-top button {
+    width: 30%;
     padding: 12px;
     color: #fff;
     background-color: #1a73e8;
@@ -83,5 +103,75 @@
 }
 
 .search-form button:hover {
+    background-color: #155bb5;
+}
+
+.search-results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.search-results-table thead tr {
+    background-color: #1a73e8;
+    color: #fff;
+    text-align: left;
+}
+
+.search-results-table th,
+.search-results-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.search-results-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.search-results-table tbody tr:hover {
+    background-color: #e6f3ff;
+}
+
+.search-results-table th {
+    font-weight: bold;
+}
+
+.search-results-table td {
+    border-bottom: 1px solid #ddd;
+}
+
+.track-button,
+.request-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.track-button {
+    background-color: #4caf50;
+    color: #fff;
+    margin-right: 5px;
+}
+
+.track-button:hover {
+    background-color: #43a047;
+}
+
+.request-button {
+    background-color: #1a73e8;
+    color: #fff;
+}
+
+.request-button:hover {
     background-color: #155bb5;
 }
