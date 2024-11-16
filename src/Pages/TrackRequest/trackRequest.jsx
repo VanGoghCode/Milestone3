@@ -13,15 +13,12 @@ function TrackRequest() {
     ];
     const [filteredRequests, setFilteredRequests] = useState(requests);
 
-
     const handleSearch = () => {
         const idQuery = searchId.trim().toLowerCase();
-
         const searchResult = requests.filter((request) => {
             const idMatches = idQuery === '' || request.id.toLowerCase().includes(idQuery);
             return idMatches;
         });
-
         setFilteredRequests(searchResult.length > 0 ? searchResult : []);
     };
 

@@ -4,7 +4,6 @@ import Xps from "../../Assets/xps.avif";
 import M1 from "../../Assets/m1.png";
 import Header from "../../Components/Header/header";
 
-// Mock data: Asset details
 const assets = [
     {
         id: "123456",
@@ -53,97 +52,94 @@ const assets = [
     },
 ];
 
-
 const AssetInventory = () => {
     const [searchId, setSearchId] = useState("");
     const [results, setResults] = useState([]);
 
     const handleSearch = (e) => {
         e.preventDefault();
-
-        // Filter assets by ID
         const filteredResults = assets.filter((asset) => asset.id === searchId);
         setResults(filteredResults);
     };
 
     return (
         <>
-        <Header />
-        <div className="asset-inventory-main">
-            <div className="search-container-top">
-                <h2>Asset Inventory</h2>
-                <form className="search-form" onSubmit={handleSearch}>
-                    <div className="search-form-search">
-                        <label htmlFor="search-id">Search Asset by ID:</label>
-                        <input
-                            type="text"
-                            id="search-id"
-                            value={searchId}
-                            onChange={(e) => setSearchId(e.target.value)}
-                            placeholder="Enter Asset ID"
-                        />
-                    </div>
-                    <button type="submit">Search</button>
-                </form>
-            </div>
+            <Header />
+            <div className="asset-inventory-main">
+                <div className="search-container-top">
+                    <h2>Check Inventory Items</h2>
+                    <form className="search-form" onSubmit={handleSearch}>
+                        <div className="search-form-search">
+                            <label htmlFor="search-id">Search Asset by ID:</label>
+                            <input
+                                type="text"
+                                id="search-id"
+                                value={searchId}
+                                onChange={(e) => setSearchId(e.target.value)}
+                                placeholder="Enter Asset ID"
+                            />
+                        </div>
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
 
-            <div className="search-container-bottom">
-                <div className="bottom-left">
-                    <table className="search-results-table">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Model</th>
-                                <th>Stockroom Manager</th>
-                                <th>Security Control Option</th>
-                                <th>Location</th>
-                                <th>Availability</th>
-                                <th>Image</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {results.length > 0 ? (
-                                results.map((asset) => (
-                                    <tr key={asset.id}>
-                                        <td>{asset.id}</td>
-                                        <td>{asset.item}</td>
-                                        <td>{asset.stockroomManager}</td>
-                                        <td>{asset.securityControlOption}</td>
-                                        <td>{asset.location}</td>
-                                        <td>{asset.quantity}</td>
-                                        <td>
-                                            {asset.image ? (
-                                                <img src={asset.image} alt={asset.model} style={{ width: "50px" }} />
-                                            ) : (
-                                                "No image"
-                                            )}
-                                        </td>
-                                    </tr>
-                                ))
-                            ) : (
-                                assets.map((asset) => (
-                                    <tr key={asset.id}>
-                                        <td>{asset.id}</td>
-                                        <td>{asset.item}</td>
-                                        <td>{asset.stockroomManager}</td>
-                                        <td>{asset.securityControlOption}</td>
-                                        <td>{asset.location}</td>
-                                        <td>{asset.quantity}</td>
-                                        <td>
-                                            {asset.image ? (
-                                                <img src={asset.image} alt={asset.model} style={{ width: "50px" }} />
-                                            ) : (
-                                                "No image"
-                                            )}
-                                        </td>
-                                    </tr>
-                                ))
-                            )}
-                        </tbody>
-                    </table>
+                <div className="search-container-bottom">
+                    <div className="bottom-left">
+                        <table className="search-results-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Model</th>
+                                    <th>Stockroom Manager</th>
+                                    <th>Security Control Option</th>
+                                    <th>Location</th>
+                                    <th>Availability</th>
+                                    <th>Image</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {results.length > 0 ? (
+                                    results.map((asset) => (
+                                        <tr key={asset.id}>
+                                            <td>{asset.id}</td>
+                                            <td>{asset.item}</td>
+                                            <td>{asset.stockroomManager}</td>
+                                            <td>{asset.securityControlOption}</td>
+                                            <td>{asset.location}</td>
+                                            <td>{asset.quantity}</td>
+                                            <td>
+                                                {asset.image ? (
+                                                    <img src={asset.image} alt={asset.model} style={{ width: "50px" }} />
+                                                ) : (
+                                                    "No image"
+                                                )}
+                                            </td>
+                                        </tr>
+                                    ))
+                                ) : (
+                                    assets.map((asset) => (
+                                        <tr key={asset.id}>
+                                            <td>{asset.id}</td>
+                                            <td>{asset.item}</td>
+                                            <td>{asset.stockroomManager}</td>
+                                            <td>{asset.securityControlOption}</td>
+                                            <td>{asset.location}</td>
+                                            <td>{asset.quantity}</td>
+                                            <td>
+                                                {asset.image ? (
+                                                    <img src={asset.image} alt={asset.model} style={{ width: "50px" }} />
+                                                ) : (
+                                                    "No image"
+                                                )}
+                                            </td>
+                                        </tr>
+                                    ))
+                                )}
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
         </>
     );
 };
