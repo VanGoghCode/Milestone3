@@ -5,6 +5,7 @@ import Signup from './Pages/SignUp/signup';
 import './index.css'
 import DuoLogin from './Pages/Duo/duoLogin';
 import SearchAssets from './Pages/SearchAssets/searchAssets';
+import TrackRequest from './Pages/TrackRequest/trackRequest';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/tfa" element={<DuoLogin />} />
         <Route path="/searchforassets" element={<SearchAssets />} />
+        <Route path="/trackrequest" element={<TrackRequest />} />
       </Routes>
     </div>
   );

@@ -16,8 +16,8 @@ function Header() {
             <nav className="nav-links">
                 <Link to="/" className={location.pathname === '/' ? 'active-link' : ''}>Home</Link>
                 <Link to="/searchforassets" className={location.pathname === '/searchforassets' ? 'active-link' : ''}>Search</Link>
-                <Link to="/request" className={location.pathname === '/request' ? 'active-link' : ''}>Request</Link>
-                <Link to="/track-request" className={location.pathname === '/track-request' ? 'active-link' : ''}>Track Request</Link>
+                <Link to="/assetinventory" className={location.pathname === '/assetinventory' ? 'active-link' : ''}>Request</Link>
+                <Link to="/trackrequest" className={location.pathname === '/trackrequest' ? 'active-link' : ''}>Track Request</Link>
                 <Link to="/contact-us" className={location.pathname === '/contact-us' ? 'active-link' : ''}>Contact Us</Link>
                 <Link to="/profile" className={location.pathname === '/profile' ? 'active-link' : ''}>Profile</Link>
             </nav>
