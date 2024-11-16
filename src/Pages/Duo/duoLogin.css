@@ -32,11 +32,11 @@ body {
 }
 .logo {
     max-height: 9vh;
-    margin-top: 3vh;
+    margin: 1vh 2vh 0 0 ;
 }
 
 .logo img {
-    width: 11vh;
+    width: 5vh;
 }
 
 .auth-content h2 {
