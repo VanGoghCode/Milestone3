@@ -1,11 +1,13 @@
 import React from 'react';
 import './signup.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import cloud from '../../Assets/cloud.svg';
 import Logo from '../../Assets/logo.png';
 
 
 function Signup() {
+    const Navigate = useNavigate();
+
     return (
         <div className='signup-main'>
             <h1 className='heading'>
@@ -28,7 +30,7 @@ function Signup() {
 
                     <label htmlFor="confirm-password">Confirm Password:</label>
                     <input type="password" id="confirm-password" name="confirm-password" required />
-                    <button type="submit">Sign Up</button>
+                    <button type="submit" onClick={() => {Navigate('/searchforassets')}}>Sign Up</button>
                 </form>
                 <p>
                     Already have an account? <Link to="/login">Log in</Link>

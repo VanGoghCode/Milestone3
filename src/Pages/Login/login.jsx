@@ -1,11 +1,13 @@
 import React from 'react';
 import './login.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import cloud from '../../Assets/cloud.svg';
 import Logo from '../../Assets/logo.png';
 
 
 function Login() {
+
+  const Navigate = useNavigate();
   return (
     <div className='login-main'>
       <h1 className='heading'>
@@ -25,7 +27,7 @@ function Login() {
           <label htmlFor="password">Password:</label>
           <input type="password" id="password" name="password" required />
 
-          <button type="submit">Login</button>
+          <button type="submit" onClick={() => {Navigate('/searchforassets')}}>Login</button>
 
           <div className="login-links">
             <Link to="/forgot-password" className="forgot-password-link">
