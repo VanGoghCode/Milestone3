@@ -18,7 +18,6 @@ function SearchAssets() {
     ];
     const [filteredAssets, setFilteredAssets] = useState(assets);
 
-
     const handleRowClick = (asset) => {
         setSelectedAsset(asset);
         setRequestId(null);
@@ -50,25 +49,25 @@ function SearchAssets() {
     return (
         <>
             <Header />
-            <div className='search-assets-main'>
-                <div className="search-container-top">
+            <div className='sat-search-assets-main'>
+                <div className="sat-search-container-top">
                     <h2>Serialized Asset Tracking</h2>
-                    <form className="search-form">
-                        <label htmlFor="search-asset-id">Search Asset ID:</label>
+                    <form className="sat-search-form">
+                        <label htmlFor="sat-search-asset-id">Search Asset ID:</label>
                         <input
                             type="text"
-                            id="search-asset-id"
-                            name="search-asset-id"
+                            id="sat-search-asset-id"
+                            name="sat-search-asset-id"
                             placeholder="Enter Asset ID"
                             value={searchId}
                             onChange={(e) => setSearchId(e.target.value)}
                         />
 
-                        <label htmlFor="search-asset-name">Search Asset Name:</label>
+                        <label htmlFor="sat-search-asset-name">Search Asset Name:</label>
                         <input
                             type="text"
-                            id="search-asset-name"
-                            name="search-asset-name"
+                            id="sat-search-asset-name"
+                            name="sat-search-asset-name"
                             placeholder="Enter Asset Name"
                             value={searchName}
                             onChange={(e) => setSearchName(e.target.value)}
@@ -77,9 +76,9 @@ function SearchAssets() {
                         <button type="button" onClick={handleSearch}>Search</button>
                     </form>
                 </div>
-                <div className="search-container-bottom">
-                    <div className='bottom-left'>
-                        <table className="search-results-table">
+                <div className="sat-search-container-bottom">
+                    <div className='sat-bottom-left'>
+                        <table className="sat-search-results-table">
                             <thead>
                                 <tr>
                                     <th>Asset ID</th>
@@ -93,7 +92,7 @@ function SearchAssets() {
                                     filteredAssets.map((asset) => (
                                         <tr
                                             key={asset.id}
-                                            className={selectedAsset?.id === asset.id ? 'selected-row' : ''}
+                                            className={selectedAsset?.id === asset.id ? 'sat-selected-row' : ''}
                                             onClick={() => handleRowClick(asset)}
                                         >
                                             <td>{asset.id}</td>
@@ -102,13 +101,13 @@ function SearchAssets() {
                                             <td>
                                                 {asset.available ? (
                                                     <>
-                                                        <button className="track-button">Track</button>
-                                                        <button className="request-button" onClick={handleRequestClick}>
+                                                        <button className="sat-track-button">Track</button>
+                                                        <button className="sat-request-button" onClick={handleRequestClick}>
                                                             Request
                                                         </button>
                                                     </>
                                                 ) : (
-                                                    <button className="unavailable-button">Unavailable</button>
+                                                    <button className="sat-unavailable-button">Unavailable</button>
                                                 )}
                                             </td>
                                         </tr>
@@ -123,9 +122,9 @@ function SearchAssets() {
                             </tbody>
                         </table>
                     </div>
-                    <div className='bottom-right'>
+                    <div className='sat-bottom-right'>
                         {selectedAsset ? (
-                            <div className="asset-details">
+                            <div className="sat-asset-details">
                                 <div>
                                     <h2>Asset Details</h2>
                                     <p><strong>Asset ID:</strong> {selectedAsset.id}</p>
@@ -136,22 +135,22 @@ function SearchAssets() {
                                     </p>
                                     {selectedAsset.available && (
                                         <>
-                                            <button className="track-button">Track</button>
-                                            <button className="request-button" onClick={handleRequestClick}>
+                                            <button className="sat-track-button">Track</button>
+                                            <button className="sat-request-button" onClick={handleRequestClick}>
                                                 Request
                                             </button>
                                         </>
                                     )}
                                     {requestId && (
-                                        <div className="request-id-section">
+                                        <div className="sat-request-id-section">
                                             <p><strong>Request ID:</strong> <div>{requestId}</div></p>
-                                            <button className="copy-button" onClick={copyToClipboard}>
+                                            <button className="sat-copy-button" onClick={copyToClipboard}>
                                                 Copy
                                             </button>
                                         </div>
                                     )}
                                 </div>
-                                <div className="asset-image">
+                                <div className="sat-asset-image">
                                     <img src={selectedAsset?.image} alt="Asset" />
                                 </div>
                             </div>

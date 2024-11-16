@@ -1,28 +1,20 @@
-/* General shared styles */
-.track-request-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 89vh;
-}
-
 .search-container-top {
     margin: 3vh 2vw 0 2vw;
     padding: 20px 50px;
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    width: 89vw;
+    width: auto;
 }
 
 .search-container-bottom {
     display: flex;
-    width: 100vw;
+    width: auto;
     justify-content: space-between;
 }
 
 .bottom-left {
-    margin: 40px 3vw;
+    margin: 40px 2vw;
     padding: 20px 50px;
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 12px;

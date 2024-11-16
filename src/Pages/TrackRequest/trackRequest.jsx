@@ -28,12 +28,12 @@ function TrackRequest() {
     return (
         <>
             <Header />
-            <div className='track-request-main'>
+            <div className='asset-inventory-main'>
                 <div className="search-container-top">
                     <h2>Track Requests</h2>
                     <form className="search-form">
                         <div className='search-form-search'>
-                            <label htmlFor="search-request-id">Search Request ID:</label>
+                            <label htmlFor="search-request-id">Search Request by ID:</label>
                             <input
                                 type="text"
                                 id="search-request-id"
@@ -43,7 +43,7 @@ function TrackRequest() {
                                 onChange={(e) => setSearchId(e.target.value)}
                             />
                         </div>
-                        <button type="button" onClick={handleSearch}>Search</button>
+                        <button style={{ minWidth: '20%'}}  type="button" onClick={handleSearch}>Search</button>
                     </form>
                 </div>
                 <div className="search-container-bottom">
