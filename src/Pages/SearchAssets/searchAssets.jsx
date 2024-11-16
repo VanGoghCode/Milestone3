@@ -5,6 +5,7 @@ import Xps from '../../Assets/xps.avif';
 
 function SearchAssets() {
     const [selectedAsset, setSelectedAsset] = useState(null);
+    const [requestId, setRequestId] = useState(null);
 
     const assets = [
         { id: '123456', location: 'Building A, Room 101', available: true, model: 'Dell XPS 13', image: Xps },
@@ -16,6 +17,17 @@ function SearchAssets() {
 
     const handleRowClick = (asset) => {
         setSelectedAsset(asset);
+        setRequestId(null); // Reset request ID when a new asset is selected
+    };
+
+    const handleRequestClick = () => {
+        const generatedRequestId = `REQ-${Date.now()}`; // Generate a unique ID using timestamp
+        setRequestId(generatedRequestId);
+    };
+
+    const copyToClipboard = () => {
+        navigator.clipboard.writeText(requestId);
+        alert("Request ID copied to clipboard!");
     };
 
     return (
@@ -51,7 +63,11 @@ function SearchAssets() {
                             </thead>
                             <tbody>
                                 {assets.map((asset) => (
-                                    <tr key={asset.id} onClick={() => handleRowClick(asset)}>
+                                    <tr
+                                        key={asset.id}
+                                        className={selectedAsset?.id === asset.id ? 'selected-row' : ''}
+                                        onClick={() => handleRowClick(asset)}
+                                    >
                                         <td>{asset.id}</td>
                                         <td>{asset.model}</td>
                                         <td>{asset.location}</td>
@@ -59,7 +75,9 @@ function SearchAssets() {
                                             {asset.available === true ? (
                                                 <>
                                                     <button className="track-button">Track</button>
-                                                    <button className="request-button">Request</button>
+                                                    <button className="request-button" onClick={handleRequestClick}>
+                                                        Request
+                                                    </button>
                                                 </>
                                             ) : (
                                                 <button className="unavailable-button">Unavailable</button>
@@ -79,16 +97,23 @@ function SearchAssets() {
                                     <p><strong>Name:</strong> {selectedAsset.model}</p>
                                     <p><strong>Location:</strong> {selectedAsset.location}</p>
                                     <p>
-                                        <strong>Status:</strong>{" "}
-                                        {selectedAsset.available === true ? "Available" : "Unavailable"}
+                                        <strong>Status:</strong> {selectedAsset.available === true ? "Available" : "Unavailable"}
                                     </p>
-                                    {selectedAsset.available === true ? (
+                                    {selectedAsset.available && (
                                         <div>
                                             <button className="track-button">Track</button>
-                                            <button className="request-button">Request</button>
+                                            <button className="request-button" onClick={handleRequestClick}>
+                                                Request
+                                            </button>
                                         </div>
-                                    ) : (
-                                        <button className="unavailable-button">Unavailable</button>
+                                    )}
+                                    {requestId && (
+                                        <div className="request-id-section">
+                                            <p><strong>Request ID:</strong> {requestId}</p>
+                                            <button className="copy-button" onClick={copyToClipboard}>
+                                                Copy Request ID
+                                            </button>
+                                        </div>
                                     )}
                                 </div>
                                 <div className="asset-image">

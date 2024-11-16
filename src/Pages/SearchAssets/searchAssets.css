@@ -226,3 +226,33 @@
 .request-button:hover {
     background-color: #155bb5;
 }
+
+.selected-row {
+    background-color: #e6f3ff; /* Highlight color for the selected row */
+    transition: background-color 0.3s ease; /* Smooth transition for better UX */
+}
+
+.request-id-section {
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.copy-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #1a73e8;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.copy-button:hover {
+    background-color: #155bb5;
+}
