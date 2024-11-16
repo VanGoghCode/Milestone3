@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     height: 89vh;
 }
 
@@ -32,17 +31,7 @@
 }
 
 .search-container-top {
-    /* max-width: 50vw; */
-    margin: 40px auto;
-    padding: 20px 50px;
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    width: 89vw;
-}
-.search-container-bottom {
-    max-width: 50vw;
-    margin: 40px auto;
+    margin: 3vh 2vw 0 2vw;
     padding: 20px 50px;
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
@@ -50,14 +39,40 @@
     width: 89vw;
 }
 
-.search-container h2 {
+.search-container-bottom {
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+}
+
+.bottom-left {
+    margin: 40px 3vw;
+    padding: 20px 50px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    width: 60vw;
+}
+
+.bottom-right {
+    margin: 40px 3vw 40px 0;
+    padding: 20px 50px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    width: 34vw;
+}
+
+.search-container-top h2 {
     color: #1a73e8;
     font-size: 26px;
-    margin-bottom: 20px;
+    margin-bottom: 4vh;
 }
+
 .search-form {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 2vh;
 }
 
 .search-form label {
@@ -146,6 +161,22 @@
     border-bottom: 1px solid #ddd;
 }
 
+.asset-details {
+    display: flex;
+}
+
+.asset-image {
+    height: 35vh;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.asset-image img {
+    height: 20vh;
+    width: auto;
+}
 .track-button,
 .request-button {
     padding: 8px 12px;
@@ -155,12 +186,32 @@
     font-size: 14px;
     font-weight: bold;
     transition: background-color 0.3s;
+    width: 6vw;
+}
+
+.unavailable-button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: not-allowed;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #d32f2f;
+    color: #fff;
+    opacity: 0.8;
+    transition: background-color 0.3s, opacity 0.3s;
+    width: 12.3vw;
+}
+
+.unavailable-button:hover {
+    background-color: #b71c1c;
+    opacity: 1;
 }
 
 .track-button {
     background-color: #4caf50;
     color: #fff;
-    margin-right: 5px;
+    margin-right: 0.3vw;
 }
 
 .track-button:hover {
